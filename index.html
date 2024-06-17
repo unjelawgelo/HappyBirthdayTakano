@@ -25,7 +25,7 @@
         <div class="back"></div>
       </div>
       <div class="inside">
-        <p>🎂HAPPY BIRTHDAY! おめでとう！良い一年になりますように!</p>
+        <p>🎂HAPPY BIRTHDAY!♪~🎂 おめでとう！✨ 良い一年になりますように!</p>
         <p>私に親切にしてくれてありがとう</p>
         <img src="e.gif" alt="Gift Image" class="gift-image"/>
         <audio id="birthdayAudio">
@@ -34,6 +34,8 @@
         </audio>
       </div>
     </div>
+  <h3 class="instruction2">[Card] をクリックして開きます。 カードの外側をクリックして閉じます</h3>
+  <h3 class="instruction">Click the Card to open. Click outside the card to close</h3>
 
     <script>
       function playAudio() {
@@ -41,5 +43,23 @@
         audio.play();
       }
     </script>
+     <style>
+    .instruction,
+    .instruction2 {
+      color: white;
+      position: fixed;
+      bottom: 10px;
+      left: 0;
+      width: 100%;
+      text-align: center;
+      font-family: "Poppins", sans-serif;
+      font-size: 10px; /* Adjust the font size as needed */
+    }
+    .instruction2 {
+      bottom: 30px; /* Adjusted to make it above instruction */
+      z-index: 2; /* Ensure it's above instruction */
+      font-size: 14px; /* Adjust the font size as needed */
+    }
+  </style>
   </body>
 </html>
