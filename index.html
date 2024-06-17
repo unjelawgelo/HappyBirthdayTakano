@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Birthday Card</title>
+    <!-- Google Font-->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="card" onmouseenter="playAudio()" onload="playAudio()">
+      <div class="outside">
+        <div class="front">
+          <div class="cake-icon"></div>
+          <div class="content">
+            <p>お誕生日おめでとう! </p>
+            <h4>高野ちゃん</h4>
+            <h5>૮ ˶ᵔ ᵕ ᵔ˶ ა</h5>
+          </div>
+        </div> 
+        <div class="back"></div>
+      </div>
+      <div class="inside">
+        <p>🎂HAPPY BIRTHDAY! おめでとう！良い一年になりますように!</p>
+        <p>私に親切にしてくれてありがとう</p>
+        <img src="e.gif" alt="Gift Image" class="gift-image"/>
+        <audio id="birthdayAudio">
+          <source src="takano.mp3" type="audio/mpeg">
+          <!-- Your browser does not support the audio element. -->
+        </audio>
+      </div>
+    </div>
+
+    <script>
+      function playAudio() {
+        var audio = document.getElementById("birthdayAudio");
+        audio.play();
+      }
+    </script>
+  </body>
+</html>

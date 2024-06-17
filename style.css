@@ -1,0 +1,160 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  overflow: hidden; /* Prevents scrolling */
+}
+
+body {
+  background-image: url('tojiBG.gif');
+  background-size: cover; /* Ensures the image covers the entire background */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  font-family: "Poppins", sans-serif;
+}
+
+.card {
+  width: 90vw;
+  max-width: 640px;
+  height: 56.25vw; /* Maintain aspect ratio of 16:9 */
+  max-height: 400px;
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  -webkit-perspective: 1200px;
+  perspective: 1200px;
+  transition: 1s;
+}
+
+.card:hover {
+  transform: rotate(-5deg);
+}
+
+.card:hover .outside {
+  transform: rotateY(-130deg);
+}
+
+.outside,
+.inside {
+  height: 100%;
+  width: 50%;
+  position: absolute;
+  left: 50.1%;
+}
+
+.inside {
+  background: linear-gradient(to right, #e7e7e7, #ffffff 30%);
+  line-height: 1.5;
+  padding: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  left: 50%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+}
+
+.outside {
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  z-index: 1;
+  transform-origin: left;
+  transition: 2s;
+  cursor: pointer;
+}
+
+.front,
+.back {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transform: rotateX(0deg);
+}
+
+.front {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.back {
+  transform: rotateY(180deg);
+  background: linear-gradient(to left, #e7e7e7, #ffffff 30%);
+}
+
+.outside p {
+  text-orientation: upright; /* Keep characters upright */
+  font-size: 18px;
+  margin-top: 70px;
+  text-align: center;
+  letter-spacing: 1px;
+  color: #ff3636;
+}
+
+.outside h4, .outside h5 {
+  text-align: center;
+  color: #12066c;
+  margin: 5px 0;
+}
+
+.inside p {
+  font-size: 10px;
+  line-height: 1.5;
+  color: #000000;
+}
+
+.gift-image {
+  width: 80%;
+  max-width: 300px;
+  height: auto;
+  margin-top: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+}
+
+@media (min-width: 600px) {
+  .outside p {
+    font-size: 23px;
+  }
+
+  .inside p {
+    font-size: 18px;
+  }
+
+  .gift-image {
+    width: 100%;
+    max-width: 200px;
+  }
+}
+.cake-icon {
+  width: 80px; /* Adjust size as needed */
+  height: 80px; /* Adjust size as needed */
+  background-image: url('cake.gif'); /* Path to your cake icon image */
+  background-size: cover;
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2; /* Ensure it's above other elements */
+  display: none; /* Hide by default */
+}
+
+.outside .cake-icon {
+  display: block; /* Show only when the card is hovered */
+}
+
+ 
